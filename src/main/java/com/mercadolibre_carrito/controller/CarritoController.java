@@ -1,11 +1,15 @@
 package com.mercadolibre_carrito.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.mercadolibre_carrito.models.Carrito;
 import com.mercadolibre_carrito.models.ProductoCarrito;
 import com.mercadolibre_carrito.service.CarritoService;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
 @RequestMapping("/carrito")
@@ -13,6 +17,12 @@ public class CarritoController {
 
     @Autowired
     private CarritoService carritoService;
+
+    @GetMapping("/all")
+    public List<Carrito> obtenerCarritos() {
+        return carritoService.obtenerCarritos();
+    }
+    
 
     @GetMapping("/{userId}")
     public Carrito obtenerCarrito(@PathVariable Long userId) {

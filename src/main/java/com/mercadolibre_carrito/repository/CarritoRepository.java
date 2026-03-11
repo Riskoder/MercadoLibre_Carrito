@@ -1,6 +1,8 @@
 package com.mercadolibre_carrito.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,10 @@ public class CarritoRepository {
 
   public Carrito findByUserId(Long userId) {
     return carritos.get(userId);
+  }
+
+  public List<Carrito> findAll() {
+    return new ArrayList<>(carritos.values());
   }
 
   public Carrito save(Carrito carrito) {
