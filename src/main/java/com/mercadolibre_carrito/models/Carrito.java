@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 public class Carrito {
 
   private Long id;
-
   private Long userId;
 
   private List<ProductoCarrito> productos = new ArrayList<>();

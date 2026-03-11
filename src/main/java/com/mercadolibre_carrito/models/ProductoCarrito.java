@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProductoCarrito {
 
-  private Long id;
   private Long productoId;
   private Integer cantidad;
   private Integer precioUnitario;
