@@ -1,6 +1,7 @@
 package com.mercadolibre_carrito.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,10 @@ public class CarritoService {
         return carritoRepository.save(carrito);
     }
 
+    public List<Carrito> obtenerCarritos() {
+        return carritoRepository.findAll();
+    }
+
 
     public void inicializarDatos() {
 
@@ -41,7 +46,6 @@ public class CarritoService {
         ProductoCarrito p2 = new ProductoCarrito(102L, 1, 30000);
 
         Carrito carrito1 = new Carrito();
-        carrito1.setId(1L);
         carrito1.setUserId(1L);
 
         ArrayList<ProductoCarrito> productos1 = new ArrayList<>();
@@ -56,7 +60,6 @@ public class CarritoService {
         ProductoCarrito p3 = new ProductoCarrito(103L, 1, 20000);
 
         Carrito carrito2 = new Carrito();
-        carrito2.setId(2L);
         carrito2.setUserId(2L);
 
         ArrayList<ProductoCarrito> productos2 = new ArrayList<>();
